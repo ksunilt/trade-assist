@@ -6,6 +6,6 @@ Prerequisites -
 2. Fyers broker API
 
 Objective - 
-- The objective of this program is to get the trading datapoint that helps you to know the current trend. 
+- The objective of this program is to get the trading datapoint that helps you to know if the current day trend of the market if its Positive or Negative. 
 - The program also helps in finding out the Gapup and Gapdown stocks from NSE India for the current day and trade on generate BUY and SELL signals for the stocks. 
 - All the status will be communicated to the use via Telegram API. 
