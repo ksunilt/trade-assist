@@ -32,15 +32,22 @@ Fyers_auth.py
 
 
 
+
+
+
+
 Awsome Strategy - 
-- find_trade:
-    This function is used to connect to fyers api to get the OHLC of the stock and keep updating the DataFrame. 
+- find_trade: (WORK IN PROGRESS)
+    The function is used to generate the BUY and SELL signal for the stock. 
+    The function will connect to fyers api to get the OHLC of the stock and keep updating the DataFrame. 
     It uses Ta-lib to find the (Simple Moving Average) SMA5 and SMA34 days similar to Awsome Oscillator. 
     It uses Ta-lib to find RSI14.
-    It uses pandas-ta to find SuperTrend 7,3 and all these data points will be concatinated with the dataframe. 
+    It uses pandas-ta to find SuperTrend 7,3 and all these data points will be concatenated with the dataframe. 
     
     Example below - 
     <img width="1408" alt="image" src="https://user-images.githubusercontent.com/55142193/172527237-d97d378e-adba-40a5-8ea3-cdbd6a24f3ec.png">
 
     
-    
+- placeOrder: (WORK IN PROGRESS)
+    The function will be called by the find_trade to place the orders in fyers based on the BUY/SELL signal. 
+   
