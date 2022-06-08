@@ -10,9 +10,12 @@ Objective -
 - The program also helps in finding out the Gapup and Gapdown stocks from NSE India for the current day and trade on generate BUY and SELL signals for the stocks. 
 - All the status will be communicated to the use via Telegram API. 
 
+
 -- Function Usage --
 
 Fyers_auth.py
+Fyers auth is to authenticate your access with fyers broker and this needs to be run before the trading session preferably before 9:AM IST. and save the access token in the token file which is valid for the current day. 
+
 - generate_auth_token:
     The function is to generate authorisation token from your fyers app.
     You will be redirected to the fyers using browser where you have to put you login and paswd.
@@ -32,11 +35,32 @@ Fyers_auth.py
 
 
 
+sgx_nifty.py
+At 08:30 AM we run the sgx nifty to find sgx value is negative or positive. This is to forcast the NIFTY direction for the current day. 
+- fetch_sgx:
+    The function uses beautifulsoup to scrap sgxnifty to get current day values. 
+    Notificaiton will be sent to the telegram user about the positive and negative trends.  
 
 
 
+pre_open_report_generation.py - 
+This generates a excel report at 09:10 AM after the pre-auction and before the trading session at 09:15 AM. This helps in finding out the GAPUP and GAPDOWN stocks based on the IEP value. 
+- Class NSEIndia:
+- get_pre_open_market_data:
+    The Class is used to connect to NSE India to fetch the Pre-Open Market. 
+    The function get_pre_open_market_data will fetch NIFTY 50 (Also you can opt for NIFTY, BANKNIFTY, FNO)
+    Saves csv and excel file in the report folder. 
+    Sends a notification to the telegram. 
+    
+- holidays: (WORK IN PROGRESS)
+    The function is used to get the trading and clearing holiday dates for the current year. 
 
-Awsome Strategy - 
+- find_stock_to_trade:
+    function to find the top gapup and gapdown stocks, within defined price range to trade. And sends notification to telegram.
+
+
+
+awsome_strategy.py - 
 - find_trade: (WORK IN PROGRESS)
     The function is used to generate the BUY and SELL signal for the stock. 
     The function will connect to fyers api to get the OHLC of the stock and keep updating the DataFrame. 
