@@ -20,7 +20,7 @@ pd.set_option('display.max_rows', None)
 pd.set_option('display.width', None)
 
 # to read the configuration file.
-config_main = '/Users/sunilkumar/ksunilt/trading_bot/sk_bot/config/config_main.yml'
+config_main = '<config.yml>'
 with open(config_main, 'r') as config_main:
     cfg = yaml.load(config_main, Loader=SafeLoader)
 
@@ -54,9 +54,6 @@ def fyers_get_holdings():
     log_path = '<log_path>'
     fyers = fyersModel.FyersModel(client_id=client_id, token=read_t_file(), log_path=log_path)
     hld_res = fyers.holdings()
-    # print(hld_res)
-    # hld_res = {'s': 'ok', 'code': 200, 'message': '', 'holdings': [{'holdingType': 'HLD', 'quantity': 1, 'costPrice': 1.55, 'marketVal': 3.75, 'remainingQuantity': 1, 'pl': 2.2, 'ltp': 3.75, 'id': 1, 'fyToken': 101000000011460, 'exchange': 10, 'symbol': 'NSE:SBIN-EQ'}, {'holdingType': 'HLD', 'quantity': 1, 'costPrice': 192.6, 'marketVal': 149.7, 'remainingQuantity': 1, 'pl': -42.9, 'ltp': 149.7, 'id': 2, 'fyToken': 10100000003812, 'exchange': 10, 'symbol': 'NSE:ZEEL-EQ'}], 'overall': {'count_total': 2, 'total_investment': 194.15, 'total_current_value': 153.45, 'total_pl': -40.7, 'pnl_perc': -10.48}}        # (comment-out to multiple stock function)
-    # hld_res = {'s': 'ok', 'code': 200, 'message': '', 'holdings': [{'holdingType': 'HLD', 'quantity': 2, 'costPrice': 192.6, 'marketVal': 149.7, 'remainingQuantity': 1, 'pl': -42.9, 'ltp': 149.7, 'id': 2, 'fyToken': 10100000003812, 'exchange': 10, 'symbol': 'NSE:ZOMATO-EQ'}], 'overall': {'count_total': 2, 'total_investment': 194.15, 'total_current_value': 153.45, 'total_pl': -40.7, 'pnl_perc': -10.48}}                         # (comment-out dummy to test single stock function)
     hld_res_code = hld_res.get('code')
     if hld_res_code != 200:
         holdings_response_msg = hld_res.get('message')
@@ -92,10 +89,7 @@ def fyers_get_funds():
     funds_response = fyers.funds()
     funds_response_msg = funds_response.get('message')
     funds_response_code = funds_response.get('code')
-    # funds_response_code = 403                                             # (comment-out to test the function)
-    # print("funds_response_code is =========>", funds_response_code)       # (comment-out to test the function)
     if funds_response_code != 200:
-        # print("ERROR : You have got unexpected response code. Message:", funds_response_msg)
         msg = "ERROR : You have got unexpected response code: " + funds_response_msg
         send_tele_msg(msg=msg)
     else:
@@ -198,9 +192,6 @@ def get_datapoints(df, show_rows, sma_yellow, sma_red, rolling_candle):
     sma_yellow = sma_yellow
     sma_red = sma_red
     rolling_candle = rolling_candle
-    # report_dir = '/Users/sunilkumar/ksunilt/trading_bot/sk_bot/strategy/awsome_strategy/reports/'
-    # report_name = "report"
-    # report_name = stock + ".xlsx"       # add logic to use pop the list in every fetch of ohlc.
 
     pd.set_option('display.max_columns', None)
     pd.set_option('display.max_rows', None)
@@ -264,9 +255,6 @@ def get_datapoints(df, show_rows, sma_yellow, sma_red, rolling_candle):
     # BUY/SELL decision making based on SMA crossover.
     df['SMA_Trend'] = np.where(df['sma_red'] > df['sma_yellow'], "UPTREND", "DOWNTREND")
 
-    # # to keep only the latest few days data to rest of the processing.
-    # df = df.tail(days)
-
     # calls the candle function to find the RED or GREEN Candle.
     df['candle_type'] = df.apply(candle, axis=1)
 
@@ -296,9 +284,6 @@ def get_datapoints(df, show_rows, sma_yellow, sma_red, rolling_candle):
 
     # to find the diff of open and low.
     df['open_low_diff'] = df['open'] - df['low']
-
-    # to find the day of the week based on date.
-    # df['day'] = df.apply(day, axis=1)
 
     # to find the max value from low columns to get the limit price for current day trading.
     df['limit_price'] = df.low.rolling(rolling_candle, win_type=None).min()          # removing this for now. closed="left"
