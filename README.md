@@ -5,13 +5,19 @@ Prerequisites -
 1. Telegram API
 2. Fyers broker API
 
-Objective - 
-- The objective of this program is to get the trading datapoint that helps you to know if the current day trend of the market if its Positive or Negative. 
-- The program also helps in finding out the Gapup and Gapdown stocks from NSE India for the current day and trade on generate BUY and SELL signals for the stocks. 
-- All the status will be communicated to the use via Telegram API. 
+Objective : The objective of this program is to get the perform swing trading stragegy with an automated approach with no manual intervention. 
+
+The app has below features :
+1.	Generates SGX Nifty status report to know the market trend in advance. 
+2.	Fully automated login process to get the token for the trading session.
+3.	Pre-open market data report to Identify the Gapup and Gapdown stocks for the day.
+4.	Identify the holding stocks and place stop loss orders based on Heikin Ashi chart and also refer favourite stocks list to find buying opportunity. 
+5.	The app can identify and generate the data points like SuperTrend, Simple Moving Average based on Daily OHLC data for the stocks. Buy orders will be placed with SMA_low crossover SMA_high and quantity is determined based on price action method or candle patterns. 
+6.	Fund allocation is handled on a predefined percentage based on the candlestick pattern. 
+7.	Sends trade event notifications and trade reports to the telegram app so that the user is aware of the ongoing events and status of the orders placed. 
 
 
--- Function Usage --
+Function Usage :
 
 Fyers_auth.py
 Fyers auth is to authenticate your access with fyers broker and this needs to be run before the trading session preferably before 9:AM IST. and save the access token in the token file which is valid for the current day. 
