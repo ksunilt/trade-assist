@@ -1,11 +1,21 @@
 Built With - 
   Python3
 
+
 Prerequisites - 
 1. Telegram API
 2. Fyers broker API
 
-Objective : The objective of this program is to get the perform swing trading stragegy with an automated approach with no manual intervention. 
+
+Technologies/modules used :
+1.	Pandas, Numpy, Math, TA-lib and pandas_ta – to generate datapoints like Simple Moving Average, ATR, spread and trend of the market etc to generate buy signal. 
+2.	Html2image, - to convert html to image and send it via telegram. 
+3.	Beautifulsoup, yaml and requests – for web scrapping and to send request for generating reports. 
+4.	Fyers Broker api to perform actual trading activity and telegram api to send notification on events and reports. 
+
+
+Objective : 
+    The objective of this program is to get the perform swing trading stragegy with an automated approach with no manual intervention. 
 
 The app has below features :
 1.	Generates SGX Nifty status report to know the market trend in advance. 
@@ -41,4 +51,6 @@ File name : utility/fyers_trade_utility.py
     - This file has all the functions necessary to perform the swing trading and each functions will be called by the main file. 
     
 File name : utility/telegram_utility.py
+    - This file contains functions that is required to send telegram messages and notifications to the end user. 
+    
     
