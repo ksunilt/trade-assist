@@ -1,0 +1,63 @@
+
+---
+# client_id is used in all the fyers function and rest in auth function.
+auth:
+  username:            # fyers_id
+  password:         # fyers_password
+  pin:                    # your integer pin
+  client_id:    # Client_id here refers to APP_ID of the created app
+  secret_key:       # app_secret key which you got after creating the app
+  redirect_uri:       # redircet_uri you entered while creating APP.
+  strategy_logs:  ../trade-assist/strategy/logs/
+  auth_logs:  ../trade-assist/authentication/logs/
+
+# SGX report generation to know market trend.
+# Used in SGX report generation.
+sgx:
+  sgx_url: https://sgxnifty.org
+  sgx_tracker_file_name_csv: sgx_tracker.csv
+  sgx_tracker_file_name_xlsx: sgx_tracker.xlsx
+  sgx_tracker_file_path: ../trade-assist/pretrade/sgx_report/reports/
+  sgx_json_file: ../trade-assist/pretrade/sgx_report/reports/sgx_today.json
+
+# Pre-Open Market.
+# Used in POM report generation.
+pom:
+  nse_url: http://nseindia.com
+  pom_reports_dir: ../trade-assist/pretrade/pre_open_market/reports/
+  pom_file: nse_pom_
+  pre_market_key: NIFTY 50   # "NIFTY 50", "BANK NIFTY", "FNO"
+
+  stock_price_range:
+    upper_limit: 100
+    lower_limit: 1000
+
+  top_stock: 1
+
+  json_output_file:
+    gapup_file: ../trade-assist/pretrade/pre_open_market/reports/gap_up_stock.json
+    gapdown_file: ../trade-assist/pretrade/pre_open_market/reports/gap_down_stock.json
+
+  input_file:
+    file_name: nse_pom_
+
+# Swing Trading Strategy.
+trading_strategy:
+  strategy:
+  fav_stock: ENABLED
+  fav_stock_file: ../trade-assist/reference_data/ref_fav_stock.json
+  stock_report_path: ../trade-assist/reference_data/stock_report/
+
+  trading_strength: HIGH
+#    HIGH, LOW
+
+
+
+# Used in all the telegram function.
+telegram:
+  tgm_root_api: # update telegram root api link here. 
+  tgm_token: # update telegram token here. 
+  tgm_chat_id: # group chat id. 
+
+
+
