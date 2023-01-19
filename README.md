@@ -20,11 +20,11 @@ The app has below features :
 ::: File Usage :::
 
 File name : Fyers_authentication.py
-    This is a automated login approach. It helps in generating the auth token on every day basis which is valid for the current trading session. This script will be executed as per the schedule on a daily basis and creates a token file that will be used by all the api functions in the trading events. The file fyers_login_crontab.py will be executed by the crontab as per the schedule. All the login details to be provided in the configuration file. 
+    - This is a automated login approach. It helps in generating the auth token on every day basis which is valid for the current trading session. This script will be executed as per the schedule on a daily basis and creates a token file that will be used by all the api functions in the trading events. The file fyers_login_crontab.py will be executed by the crontab as per the schedule. All the login details to be provided in the configuration file. 
 
 
 File name : pretrade/pre_open_market/pre_open_report_generation.py
-    This script is responsible to generate the pre-open market data from NSE site to find out the top gap-up and gap-down stocks. Reports can be generated to multiple segments like FNO, BANKNIFTY or EQUITY cash. The report is scheduled by a cronjob and will be executed as per the schedule and should be scheduled immediately after the auction market and before the actual trading session ie,. 9:10 AM IST. 
+    - This script is responsible to generate the pre-open market data from NSE site to find out the top gap-up and gap-down stocks. Reports can be generated to multiple segments like FNO, BANKNIFTY or EQUITY cash. The report is scheduled by a cronjob and will be executed as per the schedule and should be scheduled immediately after the auction market and before the actual trading session ie,. 9:10 AM IST. 
     
     
 File name: 
