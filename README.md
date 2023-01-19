@@ -58,7 +58,15 @@ Application Flow --
 2. Fyers login process will kickstart at 8:45 AM IST to get the auth token which is valid for 24 hours. 
 3. Pre-open market report will be executed as per the schedule at 9:10 to find the gapup and gapdown stocks. 
 4. Strategy will be executed at 9:30 AM IST to find the buying opportunity. 
-    a. Lists out the holdings and place stop loss for the holding stock. SL Price will be determinded based on the existing porfit and candle stock pattern. 
-    b. Checks the Fund balance and if there is no enough fund, then the program terminates. 
-    c. Generate OHLC data for all the stocks in holdings and in favriote stocks. OHLC will be converted into Heikin Ashi to reduec the noise in candles. 
-    d. Generates datasets for the stock like, SMA long, SMA short, stock trend. 
+    - Lists out the holdings and place stop loss for the holding stock. SL Price will be determinded based on the existing porfit and candle stock pattern. 
+    - Checks the Fund balance and if there is no enough fund, then the program terminates. 
+    - Generate OHLC data for all the stocks in holdings and in favriote stocks. OHLC will be converted into Heikin Ashi to reduec the noise in candles. 
+    - Generates datasets for the stock SMA long, SMA short, stock trend, ART.
+    - Based on the candle pattern and price action determines the BUY signal. 
+    - Quantity is determinded based on the candle patterns. 
+    - Fund will be allocated based on the predefined percentaged which is again based on the candle pattern. 
+    - Limit price is determinded based on the previous day low. 
+    - If a stock has a buy signal then limit orders are placed and order status are checked in a loop untill its filled. 
+    - Stocks that are not elegible for buy will be appended to a list that will be pick up again aftr a specific interval to find the buy signals. 
+    - Position, holdings, pnl Report will be generated and sent to end user for the current day.  
+    
