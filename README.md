@@ -53,4 +53,12 @@ File name : utility/fyers_trade_utility.py
 File name : utility/telegram_utility.py
     - This file contains functions that is required to send telegram messages and notifications to the end user. 
     
-    
+Application Flow --
+1. Scheduled SGX report will be generated at 8:30 AM IST.
+2. Fyers login process will kickstart at 8:45 AM IST to get the auth token which is valid for 24 hours. 
+3. Pre-open market report will be executed as per the schedule at 9:10 to find the gapup and gapdown stocks. 
+4. Strategy will be executed at 9:30 AM IST to find the buying opportunity. 
+    a. Lists out the holdings and place stop loss for the holding stock. SL Price will be determinded based on the existing porfit and candle stock pattern. 
+    b. Checks the Fund balance and if there is no enough fund, then the program terminates. 
+    c. Generate OHLC data for all the stocks in holdings and in favriote stocks. OHLC will be converted into Heikin Ashi to reduec the noise in candles. 
+    d. Generates datasets for the stock like, SMA long, SMA short, stock trend. 
