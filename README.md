@@ -79,4 +79,3 @@ Example of BUY logic :
   ![image](https://user-images.githubusercontent.com/55142193/213402231-75a2e26a-bd77-4a37-8f4a-a596101dfa62.png)
 
 
-
