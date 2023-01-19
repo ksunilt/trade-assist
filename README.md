@@ -27,4 +27,8 @@ File name : pretrade/pre_open_market/pre_open_report_generation.py
     - This script is responsible to generate the pre-open market data from NSE site to find out the top gap-up and gap-down stocks. Reports can be generated to multiple segments like FNO, BANKNIFTY or EQUITY cash. The report is scheduled by a cronjob and will be executed as per the schedule and should be scheduled immediately after the auction market and before the actual trading session ie,. 9:10 AM IST. 
     
     
-File name: 
+File name :  pretrade/sgx_report/sgx_nifty.py
+    - SGX reports is responsible to geenrate the SGX Nifty status on daily basis and send out the reports to the user. It help the user to predict the tend in the current market to know if the market is going to be negative or positive. The report will be executed by the cronjob as per the schedule. 
+    
+
+File name : 
