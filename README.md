@@ -69,4 +69,14 @@ Application Flow --
     - If a stock has a buy signal then limit orders are placed and order status are checked in a loop untill its filled. 
     - Stocks that are not elegible for buy will be appended to a list that will be pick up again aftr a specific interval to find the buy signals. 
     - Position, holdings, pnl Report will be generated and sent to end user for the current day.  
-    
+  
+  
+Example of Dataset : 
+  ![image](https://user-images.githubusercontent.com/55142193/213401932-4a61591d-ffe4-4558-a1bc-86afae2e8772.png)
+
+
+Example of BUY logic :
+  ![image](https://user-images.githubusercontent.com/55142193/213402231-75a2e26a-bd77-4a37-8f4a-a596101dfa62.png)
+
+
+
