@@ -81,6 +81,9 @@ Example of BUY logic :
 
 
 Sample output as on 01-Jan-2025
-![telegram_screenshot](https://github.com/user-attachments/assets/8466cd82-dc7c-40eb-a4c7-50d10d3ec43b)
+![telegram_screenshot_1](https://github.com/user-attachments/assets/abcddc41-119a-4831-a457-eb8573cf3cae)
+
+![telegram_screenshot_2](https://github.com/user-attachments/assets/c03fe027-a698-4406-b8b0-f18a232b5cff)
+
 
 
