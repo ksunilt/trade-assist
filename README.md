@@ -6,6 +6,7 @@ Prerequisites -
 1. Telegram API
 2. Fyers broker API
 
+Actual code is udpated in different project. The above code is for reference only. 
 
 Technologies/modules used :
 1.	Pandas, Numpy, Math, TA-lib and pandas_ta – to generate datapoints like Simple Moving Average, ATR, spread and trend of the market etc to generate buy signal. 
@@ -77,5 +78,9 @@ Example of Dataset :
 
 Example of BUY logic :
   ![image](https://user-images.githubusercontent.com/55142193/213402231-75a2e26a-bd77-4a37-8f4a-a596101dfa62.png)
+
+
+Sample output as on 01-Jan-2025
+![telegram_screenshot](https://github.com/user-attachments/assets/8466cd82-dc7c-40eb-a4c7-50d10d3ec43b)
 
 
